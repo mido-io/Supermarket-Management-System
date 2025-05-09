@@ -1,0 +1,56 @@
+.btnSubmit{
+    -fx-background-color:  #012E40;
+}
+
+.btnSubmit:hover{
+    -fx-background-color: #153448;
+}
+
+.hover{
+    -fx-background-color:  #192F43;
+}
+
+.hover:hover{
+    -fx-background-color: #153448;
+
+}
+
+.escIcon{
+    -fx-background-color: transparent;
+}
+
+.escIcon:hover{
+    -fx-background-color:  #d24747;
+}
+
+.table-view{
+    /*-fx-background-color: transparent;*/
+    -fx-border-color: #343a40;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding:0px ;
+}
+.table-view .table-column{
+    -fx-alignment: center;
+    -fx-size:50px;
+}
+.table-view .table-column-background{
+    -fx-background-color: #d24747;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 5px 5px 0px 0px;
+}
+.table-view .column-header , filter{
+    -fx-size:50px;
+    -fx-background-color: #343a40;
+    /*-fx-color:#fff;*/
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+}
+.container{
+    -fx-background-radius: 15px;
+}
+
+
+
+

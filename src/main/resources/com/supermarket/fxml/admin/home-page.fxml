@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.supermarket.controller.admin.AdminHomeController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #192F43;">
+            <children>
+                <HBox fx:id="btnHome" alignment="CENTER" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: #3C5B6F;">
+                    <VBox.margin>
+                        <Insets top="40.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label text="HOME" textFill="#dfd0b8">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox prefHeight="305.0" prefWidth="200.0" style="-fx-background-color: #192F43;">
+                    <children>
+                        <Button fx:id="btnProduct" alignment="CENTER" mnemonicParsing="false" onAction="#openProductPage" prefHeight="50.0" prefWidth="200.0" styleClass="hover" stylesheets="@../../css/style.css" text="Products" textFill="#fffafa">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnEmployee" alignment="CENTER" mnemonicParsing="false" onAction="#openEmployeePage" prefHeight="50.0" prefWidth="200.0" styleClass="hover" stylesheets="@../../css/style.css" text="Employees" textFill="#fffafa">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnInventory" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="hover" stylesheets="@../../css/style.css" text="Inventory" textFill="#fffafa">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnServies" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="hover" stylesheets="@../../css/style.css" text="Services" textFill="#fffafa">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnStatics" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="hover" stylesheets="@../../css/style.css" text="Statistics" textFill="#fffafa">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <VBox prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #3C5B6F;" HBox.hgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="400.0" VBox.vgrow="NEVER">
+                    <children>
+                        <HBox fx:id="logout" alignment="CENTER" onMouseClicked="#logout" prefHeight="29.0" prefWidth="39.0" styleClass="escIcon" stylesheets="@../../css/style.css">
+                            <children>
+                                <ImageView fitHeight="16.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/LogOutIcon.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                            <padding>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="400.0" spacing="20.0" VBox.vgrow="NEVER">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="130.0" styleClass="container" stylesheets="@../../css/style.css">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/moneyIcon.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="totalIncoumcount" text="0.00 $" textFill="#dfd0b8">
+                                    <font>
+                                        <Font name="Arial Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Total Income" textFill="#dfd0b8">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="130.0" styleClass="container" stylesheets="@../../css/style.css">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/todaysales-icon.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="todaySalles" text="0" textFill="#dfd0b8">
+                                    <font>
+                                        <Font name="Arial Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Today's Sales" textFill="#dfd0b8">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <VBox prefHeight="200.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Daily Income Trend" textFill="#dfd0b8">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <LineChart fx:id="lineChart" prefHeight="180.0" prefWidth="400.0">
+                            <xAxis>
+                                <CategoryAxis label="Date" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Income ($)" />
+                            </yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</HBox>

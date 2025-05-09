@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3C5B6F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.supermarket.controller.employee.EmployeeHomeController">
+    <children>
+        <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="600.0">
+            <children>
+                <HBox fx:id="close" alignment="CENTER" onMouseClicked="#close" prefHeight="29.0" prefWidth="39.0" styleClass="escIcon" stylesheets="@../../css/style.css">
+                    <children>
+                        <ImageView fitHeight="16.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/LogOutIcon.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </HBox>
+        <Label prefHeight="44.0" prefWidth="200.0" text="Purchase Management" textFill="#dfd0b8">
+            <font>
+                <Font name="Arial Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </Label>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+            <children>
+                <TextField fx:id="purchase_brand" onAction="#purchaseSearchBrand" prefHeight="30.0" prefWidth="150.0" promptText="Brand Name" />
+                <ComboBox fx:id="purchase_productName" prefHeight="30.0" prefWidth="150.0" promptText="Product Name" />
+                <Spinner fx:id="purchase_Quantity" prefHeight="30.0" prefWidth="80.0" />
+                <Button fx:id="purchase_AddBtn" mnemonicParsing="false" onAction="#purchaseAdd" prefHeight="30.0" prefWidth="80.0" styleClass="btnSubmit" stylesheets="@../../css/style.css" text="Add" />
+            </children>
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </HBox>
+        <TableView fx:id="purchase_tableView" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="purchase_col_product" prefWidth="150.0" text="Product" />
+                <TableColumn fx:id="purchase_col_brand" prefWidth="150.0" text="Brand" />
+                <TableColumn fx:id="purchase_col_quantity" prefWidth="80.0" text="Quantity" />
+                <TableColumn fx:id="purchase_col_price" prefWidth="100.0" text="Price" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
+            <children>
+                <Label fx:id="purchase_total" prefHeight="30.0" prefWidth="100.0" text="0.00 $" textFill="#dfd0b8">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="purchase_PayBtn" mnemonicParsing="false" onAction="#purchasePay" prefHeight="30.0" prefWidth="80.0" styleClass="btnSubmit" stylesheets="@../../css/style.css" text="Pay" />
+                <Button fx:id="purchase_RecipitBtn" mnemonicParsing="false" onAction="#showReceipt" prefHeight="30.0" prefWidth="80.0" styleClass="btnSubmit" stylesheets="@../../css/style.css" text="Receipt" />
+                <Button fx:id="purchase_ResetBtn1" mnemonicParsing="false" onAction="#purchaseReset" prefHeight="30.0" prefWidth="80.0" styleClass="btnSubmit" stylesheets="@../../css/style.css" text="Reset" />
+                <Button fx:id="btnCalculateChange" mnemonicParsing="false" onAction="#openChangeCalcolator" prefHeight="30.0" prefWidth="100.0" styleClass="btnSubmit" stylesheets="@../../css/style.css" text="Calculate Change" />
+            </children>
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.supermarket.controller.LoginController">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <AnchorPane minHeight="400.0" prefWidth="300.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #192F43;">
+                            <children>
+                                <ImageView fitHeight="132.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/logo.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="51.0" prefWidth="221.0" text="MideoMarket" textFill="#e0f0ff">
+                                    <font>
+                                        <Font name="Yu Gothic UI Bold" size="35.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="admin_form" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" visible="false">
+                    <children>
+                        <VBox alignment="TOP_CENTER" layoutX="202.0" prefHeight="400.0" prefWidth="502.0" spacing="5.0" style="-fx-background-color: #F5EFE6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox fx:id="closeIcon" alignment="CENTER" onMouseClicked="#close" prefHeight="20.0" prefWidth="30.0" styleClass="escIcon" stylesheets="@../css/style.css">
+                                            <children>
+                                                <ImageView fitHeight="16.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/escIcon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0" />
+                                    </padding>
+                                </HBox>
+                                <Separator prefHeight="7.0" prefWidth="275.0">
+                                    <VBox.margin>
+                                        <Insets left="40.0" right="40.0" top="5.0" />
+                                    </VBox.margin>
+                                </Separator>
+                                <VBox alignment="CENTER" prefHeight="391.0" prefWidth="300.0" spacing="20.0">
+                                    <children>
+                                        <Label alignment="TOP_CENTER" prefHeight="42.0" prefWidth="175.0" text="LOG IN" textFill="#182e40e5">
+                                            <font>
+                                                <Font name="Arial Bold" size="36.0" />
+                                            </font>
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </Label>
+                                        <VBox alignment="CENTER" prefHeight="69.0" prefWidth="300.0" spacing="10.0">
+                                            <children>
+                                                <TextField fx:id="admin_username" minHeight="-Infinity" minWidth="100.0" onAction="#adminLogin" prefHeight="30.0" prefWidth="100.0" promptText="username">
+                                                    <font>
+                                                        <Font name="Arial" size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <PasswordField fx:id="admin_password" onAction="#adminLogin" promptText="password">
+                                                    <font>
+                                                        <Font name="Arial" size="14.0" />
+                                                    </font>
+                                                </PasswordField>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="263.0">
+                                            <children>
+                                                <Button fx:id="admin_loginBtn" focusTraversable="false" mnemonicParsing="false" onAction="#adminLogin" prefHeight="36.0" prefWidth="127.0" styleClass="btnSubmit" stylesheets="@../css/style.css" text="Log in" textFill="#e0f0ff">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets top="5.0" />
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="263.0">
+                                            <children>
+                                                <Label fx:id="lblDisplayError" alignment="CENTER" prefHeight="23.0" prefWidth="165.0" textFill="#db1313cc">
+                                                    <font>
+                                                        <Font name="Arial" size="12.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets top="10.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Label fx:id="admin_hyperLink" alignment="CENTER" onMouseClicked="#switchForm" prefHeight="23.0" prefWidth="149.0" text="Login Employee Account ?" textFill="#012e40cc">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Label>
+                                <Separator prefHeight="7.0" prefWidth="275.0">
+                                    <VBox.margin>
+                                        <Insets bottom="25.0" left="40.0" right="40.0" />
+                                    </VBox.margin>
+                                </Separator>
+                            </children>
+                            <padding>
+                                <Insets bottom="1.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="employee_form" layoutX="310.0" layoutY="10.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" layoutX="202.0" prefHeight="400.0" prefWidth="502.0" spacing="5.0" style="-fx-background-color: #F5EFE6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="300.0">
+                                    <children>
+                                        <HBox fx:id="closeIcon1" alignment="CENTER" onMouseClicked="#close" prefHeight="20.0" prefWidth="30.0" styleClass="escIcon" stylesheets="@../css/style.css">
+                                            <children>
+                                                <ImageView fitHeight="16.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/escIcon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="2.0" left="2.0" />
+                                    </padding>
+                                </HBox>
+                                <Separator prefHeight="7.0" prefWidth="275.0">
+                                    <VBox.margin>
+                                        <Insets left="40.0" right="40.0" top="5.0" />
+                                    </VBox.margin>
+                                </Separator>
+                                <VBox alignment="CENTER" prefHeight="391.0" prefWidth="300.0" spacing="20.0">
+                                    <children>
+                                        <Label alignment="TOP_CENTER" prefHeight="42.0" prefWidth="175.0" text="LOG IN" textFill="#182e40e5">
+                                            <font>
+                                                <Font name="Arial Bold" size="36.0" />
+                                            </font>
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </Label>
+                                        <VBox alignment="CENTER" prefHeight="69.0" prefWidth="300.0" spacing="10.0">
+                                            <children>
+                                                <TextField fx:id="employee_username" minHeight="-Infinity" minWidth="100.0" onAction="#employeeLogin" prefHeight="30.0" prefWidth="100.0" promptText="username">
+                                                    <font>
+                                                        <Font name="Arial" size="14.0" />
+                                                    </font>
+                                                </TextField>
+                                                <PasswordField fx:id="employee_password" onAction="#employeeLogin" promptText="password">
+                                                    <font>
+                                                        <Font name="Arial" size="14.0" />
+                                                    </font>
+                                                </PasswordField>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </VBox>
+                                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="263.0">
+                                            <children>
+                                                <Button fx:id="employee_LoginBtn" focusTraversable="false" mnemonicParsing="false" onAction="#employeeLogin" prefHeight="36.0" prefWidth="127.0" styleClass="btnSubmit" stylesheets="@../css/style.css" text="Log in" textFill="#e0f0ff">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                    <font>
+                                                        <Font name="System Bold" size="12.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets top="5.0" />
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="263.0">
+                                            <children>
+                                                <Label fx:id="lblDisplayError1" alignment="CENTER" prefHeight="23.0" prefWidth="165.0" textFill="#db1313cc">
+                                                    <font>
+                                                        <Font name="Arial" size="12.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets top="10.0" />
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Label fx:id="employee_huperLink" alignment="CENTER" onMouseClicked="#switchForm" prefHeight="23.0" prefWidth="149.0" text="Login Admin Account ?" textFill="#012e40cc">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Label>
+                                <Separator prefHeight="7.0" prefWidth="275.0">
+                                    <VBox.margin>
+                                        <Insets bottom="25.0" left="40.0" right="40.0" />
+                                    </VBox.margin>
+                                </Separator>
+                            </children>
+                            <padding>
+                                <Insets bottom="1.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
