@@ -148,7 +148,7 @@ javafx.controls,javafx.fxml
   src/main/resources/com/supermarket/images/
 
 
-### Collaborator
+## Collaborator
 
 [Mohamed Khiarey](https://github.com/khairy-nio)
 
