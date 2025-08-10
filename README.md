@@ -55,7 +55,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/MideoHub/Supermarket-Management-System.git
+git clone https://github.com/mido-io/Supermarket-Management-System.git
 cd Supermarket-Management-System
 ```
 ## 2. Configure MySQL
